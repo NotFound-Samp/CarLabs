@@ -37,9 +37,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.Time1Bar = new System.Windows.Forms.TrackBar();
+            this.Time3Bar = new System.Windows.Forms.TrackBar();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBooths1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBooths2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Time1Bar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Time3Bar)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -53,9 +59,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(570, 96);
+            this.button1.Location = new System.Drawing.Point(570, 220);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(305, 23);
+            this.button1.Size = new System.Drawing.Size(335, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "Start Simulation";
             this.button1.UseVisualStyleBackColor = true;
@@ -129,16 +135,64 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(570, 125);
+            this.progressBar.Location = new System.Drawing.Point(570, 249);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(305, 22);
+            this.progressBar.Size = new System.Drawing.Size(335, 22);
             this.progressBar.TabIndex = 8;
+            // 
+            // Time1Bar
+            // 
+            this.Time1Bar.LargeChange = 1;
+            this.Time1Bar.Location = new System.Drawing.Point(570, 96);
+            this.Time1Bar.Maximum = 50000;
+            this.Time1Bar.Minimum = 2000;
+            this.Time1Bar.Name = "Time1Bar";
+            this.Time1Bar.Size = new System.Drawing.Size(335, 56);
+            this.Time1Bar.TabIndex = 9;
+            this.Time1Bar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.Time1Bar.Value = 3000;
+            this.Time1Bar.Scroll += new System.EventHandler(this.Time1Bar_Scroll);
+            // 
+            // Time3Bar
+            // 
+            this.Time3Bar.LargeChange = 1;
+            this.Time3Bar.Location = new System.Drawing.Point(570, 158);
+            this.Time3Bar.Maximum = 50000;
+            this.Time3Bar.Minimum = 2000;
+            this.Time3Bar.Name = "Time3Bar";
+            this.Time3Bar.Size = new System.Drawing.Size(335, 56);
+            this.Time3Bar.TabIndex = 9;
+            this.Time3Bar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.Time3Bar.Value = 3000;
+            this.Time3Bar.Scroll += new System.EventHandler(this.Time2Bar_Scroll);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(570, 136);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(314, 16);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Лимит задержки на 1ом пункте оплаты: 3000 мс";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(570, 198);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(314, 16);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Лимит задержки на 2ом пункте оплаты: 3000 мс";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 635);
+            this.ClientSize = new System.Drawing.Size(917, 635);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Time3Bar);
+            this.Controls.Add(this.Time1Bar);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -153,6 +207,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBooths1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBooths2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Time1Bar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Time3Bar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,6 +225,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.TrackBar Time1Bar;
+        private System.Windows.Forms.TrackBar Time3Bar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 
