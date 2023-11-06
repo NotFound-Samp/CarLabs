@@ -143,7 +143,7 @@
             // Time1Bar
             // 
             this.Time1Bar.Location = new System.Drawing.Point(570, 96);
-            this.Time1Bar.Maximum = 13;
+            this.Time1Bar.Maximum = 15;
             this.Time1Bar.Minimum = 3;
             this.Time1Bar.Name = "Time1Bar";
             this.Time1Bar.Size = new System.Drawing.Size(335, 56);
@@ -154,7 +154,7 @@
             // Time3Bar
             // 
             this.Time3Bar.Location = new System.Drawing.Point(570, 158);
-            this.Time3Bar.Maximum = 13;
+            this.Time3Bar.Maximum = 15;
             this.Time3Bar.Minimum = 3;
             this.Time3Bar.Name = "Time3Bar";
             this.Time3Bar.Size = new System.Drawing.Size(335, 56);
