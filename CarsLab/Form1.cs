@@ -96,14 +96,14 @@ namespace CarsLab
 
         private void Time1Bar_Scroll(object sender, EventArgs e)
         {
-            timeLimit1 = Time1Bar.Value;
-            label4.Text = $"Лимит задержки на 1ом пункте оплаты: {Time1Bar.Value} мс";
+            timeLimit1 = Time1Bar.Value*1000;
+            label4.Text = $"Лимит задержки на 1ом пункте оплаты: {timeLimit1} мс";
         }
 
         private void Time2Bar_Scroll(object sender, EventArgs e)
         {
-            timeLimit2 = Time3Bar.Value;
-            label5.Text = $"Лимит задержки на 2ом пункте оплаты: {Time3Bar.Value} мс";
+            timeLimit2 = Time3Bar.Value*1000;
+            label5.Text = $"Лимит задержки на 2ом пункте оплаты: {timeLimit2} мс";
         }
     }
 }

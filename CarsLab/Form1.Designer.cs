@@ -63,7 +63,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(335, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Start Simulation";
+            this.button1.Text = "Запуск симуляцию";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.buttonStartSimulation_Click);
             // 
@@ -142,28 +142,24 @@
             // 
             // Time1Bar
             // 
-            this.Time1Bar.LargeChange = 1;
             this.Time1Bar.Location = new System.Drawing.Point(570, 96);
-            this.Time1Bar.Maximum = 50000;
-            this.Time1Bar.Minimum = 2000;
+            this.Time1Bar.Maximum = 13;
+            this.Time1Bar.Minimum = 3;
             this.Time1Bar.Name = "Time1Bar";
             this.Time1Bar.Size = new System.Drawing.Size(335, 56);
             this.Time1Bar.TabIndex = 9;
-            this.Time1Bar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.Time1Bar.Value = 3000;
+            this.Time1Bar.Value = 3;
             this.Time1Bar.Scroll += new System.EventHandler(this.Time1Bar_Scroll);
             // 
             // Time3Bar
             // 
-            this.Time3Bar.LargeChange = 1;
             this.Time3Bar.Location = new System.Drawing.Point(570, 158);
-            this.Time3Bar.Maximum = 50000;
-            this.Time3Bar.Minimum = 2000;
+            this.Time3Bar.Maximum = 13;
+            this.Time3Bar.Minimum = 3;
             this.Time3Bar.Name = "Time3Bar";
             this.Time3Bar.Size = new System.Drawing.Size(335, 56);
             this.Time3Bar.TabIndex = 9;
-            this.Time3Bar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.Time3Bar.Value = 3000;
+            this.Time3Bar.Value = 3;
             this.Time3Bar.Scroll += new System.EventHandler(this.Time2Bar_Scroll);
             // 
             // label4
