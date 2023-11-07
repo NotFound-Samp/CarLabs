@@ -138,7 +138,13 @@ namespace CarsLab
         }
         private void UpdateLabelInfo()
         {
-            labelFinish.Text = $"Автомобилей в очереди на первый пункт: {totalCars - compliteCar - numericUpDownBooths1.Value},\nАвтомобилей в очеди на второй пункт: {compliteCar - outCar - finishCar - numericUpDownBooths2.Value}.";
+            int temp1 = totalCars - compliteCar - (int)numericUpDownBooths1.Value;
+            int temp2 = compliteCar - outCar - finishCar - (int)numericUpDownBooths2.Value;
+            if (temp1 < 0)
+                temp1 = 0;
+            if (temp2 < 0)
+                temp2 = 0;
+            labelFinish.Text = $"Автомобилей в очереди на первый пункт: {temp1},\nАвтомобилей в очеди на второй пункт: {temp2}.";
         }
         private TimeSpan CurrentTime()
         {
