@@ -209,9 +209,8 @@
             this.labelFinish.AutoSize = true;
             this.labelFinish.Location = new System.Drawing.Point(580, 480);
             this.labelFinish.Name = "labelFinish";
-            this.labelFinish.Size = new System.Drawing.Size(49, 16);
+            this.labelFinish.Size = new System.Drawing.Size(0, 16);
             this.labelFinish.TabIndex = 14;
-            this.labelFinish.Text = "Cancel";
             // 
             // travelTimeBar
             // 

@@ -28,7 +28,6 @@ namespace CarsLab
         {
             InitializeComponent(); // Сама инициализация формы
         }
-
         private async void buttonStartSimulation_Click(object sender, EventArgs e)
         {
             progressBar.Maximum = totalCars; // Макс. значение прогресс бара это кол-во машин
@@ -69,7 +68,6 @@ namespace CarsLab
 
             listBox1.Items.Add($"[{CurrentTime()}] Автомобиль[{carNumber}] проехал первый пункт оплаты.");
             
-            
             firstTollBooth.Release(); // Освобождаем шлагбаум на первом пункте
             compliteCar += 1;
             UpdateLabelInfo();
@@ -86,7 +84,6 @@ namespace CarsLab
             }
 
             await secondTollBooth.WaitAsync(); // Заезд на второй пункт оплаты
-            UpdateLabelInfo();
 
             listBox1.Items.Add($"[{CurrentTime()}] Автомобиль[{carNumber}] заехал на второй пункт оплаты.");
             
@@ -100,7 +97,6 @@ namespace CarsLab
             finishCar += 1;
             UpdateLabelInfo();
         }
-
         private void numericUpDownBarrier1_ValueChanged(object sender, EventArgs e) // Метод, который хукает эвент нажатия inputInt и увеличивает/уменьшает своё значение
         {
             if ((int)numericUpDownBooths1.Value < 1)
@@ -109,7 +105,6 @@ namespace CarsLab
                 numericUpDownBooths1.Value = 100;
             firstTollBooth = new SemaphoreSlim((int)numericUpDownBooths1.Value);
         }
-
         private void numericUpDownBarrier2_ValueChanged(object sender, EventArgs e)
         {
             if ((int)numericUpDownBooths2.Value < 1)
@@ -118,7 +113,6 @@ namespace CarsLab
                 numericUpDownBooths2.Value = 100;
             secondTollBooth = new SemaphoreSlim((int)numericUpDownBooths2.Value);
         }
-
         private void numericUpDownCars_ValueChanged(object sender, EventArgs e)
         {
             if ((int)numericUpDownCar.Value < 1)
@@ -127,13 +121,11 @@ namespace CarsLab
                 numericUpDownCar.Value = 100;
             totalCars = (int)numericUpDownCar.Value;
         }
-
         private void Time1Bar_Scroll(object sender, EventArgs e) // Слайдер, какого-то хуя он тут называется TrackBar, разраб долбаёб. То же самое, что выше, ток тут ползунок
         {
             timeLimit1 = Time1Bar.Value*1000; // Слайдер выдаёт число от 3 до 15(Можно больше, но в целом похуй) и умножает его на 1000, чтобы получить секунды
             label4.Text = $"Лимит задержки на 1ом пункте оплаты: {timeLimit1} мс";
         }
-
         private void Time2Bar_Scroll(object sender, EventArgs e)
         {
             timeLimit2 = Time3Bar.Value*1000;
