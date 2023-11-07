@@ -4,6 +4,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// Будет добавлена сводка автомобилей, добавлены счётчики времени, возможно таблица для построения графиков
+
 namespace CarsLab
 {
     public partial class Form1 : Form
