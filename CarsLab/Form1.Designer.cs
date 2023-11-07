@@ -41,11 +41,18 @@
             this.Time3Bar = new System.Windows.Forms.TrackBar();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.labelInfo = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelFinish = new System.Windows.Forms.Label();
+            this.travelTimeBar = new System.Windows.Forms.TrackBar();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBooths1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBooths2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Time1Bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Time3Bar)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.travelTimeBar)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -54,22 +61,22 @@
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(12, 11);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(552, 612);
+            this.listBox1.Size = new System.Drawing.Size(562, 612);
             this.listBox1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(570, 220);
+            this.button1.Location = new System.Drawing.Point(580, 282);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(335, 23);
+            this.button1.Size = new System.Drawing.Size(335, 33);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Запуск симуляцию";
+            this.button1.Text = "Запуск симуляции";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.buttonStartSimulation_Click);
             // 
             // numericUpDownBooths1
             // 
-            this.numericUpDownBooths1.Location = new System.Drawing.Point(570, 12);
+            this.numericUpDownBooths1.Location = new System.Drawing.Point(580, 12);
             this.numericUpDownBooths1.Name = "numericUpDownBooths1";
             this.numericUpDownBooths1.Size = new System.Drawing.Size(65, 22);
             this.numericUpDownBooths1.TabIndex = 2;
@@ -82,7 +89,7 @@
             // 
             // numericUpDownBooths2
             // 
-            this.numericUpDownBooths2.Location = new System.Drawing.Point(570, 40);
+            this.numericUpDownBooths2.Location = new System.Drawing.Point(580, 40);
             this.numericUpDownBooths2.Name = "numericUpDownBooths2";
             this.numericUpDownBooths2.Size = new System.Drawing.Size(65, 22);
             this.numericUpDownBooths2.TabIndex = 3;
@@ -95,7 +102,7 @@
             // 
             // numericUpDownCar
             // 
-            this.numericUpDownCar.Location = new System.Drawing.Point(570, 68);
+            this.numericUpDownCar.Location = new System.Drawing.Point(580, 68);
             this.numericUpDownCar.Name = "numericUpDownCar";
             this.numericUpDownCar.Size = new System.Drawing.Size(65, 22);
             this.numericUpDownCar.TabIndex = 4;
@@ -109,7 +116,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(641, 14);
+            this.label1.Location = new System.Drawing.Point(651, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(185, 16);
             this.label1.TabIndex = 5;
@@ -118,7 +125,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(641, 42);
+            this.label2.Location = new System.Drawing.Point(651, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(185, 16);
             this.label2.TabIndex = 6;
@@ -127,7 +134,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(641, 70);
+            this.label3.Location = new System.Drawing.Point(651, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 16);
             this.label3.TabIndex = 7;
@@ -135,14 +142,14 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(570, 249);
+            this.progressBar.Location = new System.Drawing.Point(580, 455);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(335, 22);
             this.progressBar.TabIndex = 8;
             // 
             // Time1Bar
             // 
-            this.Time1Bar.Location = new System.Drawing.Point(570, 96);
+            this.Time1Bar.Location = new System.Drawing.Point(580, 96);
             this.Time1Bar.Maximum = 15;
             this.Time1Bar.Minimum = 3;
             this.Time1Bar.Name = "Time1Bar";
@@ -153,7 +160,7 @@
             // 
             // Time3Bar
             // 
-            this.Time3Bar.Location = new System.Drawing.Point(570, 158);
+            this.Time3Bar.Location = new System.Drawing.Point(580, 158);
             this.Time3Bar.Maximum = 15;
             this.Time3Bar.Minimum = 3;
             this.Time3Bar.Name = "Time3Bar";
@@ -165,7 +172,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(570, 136);
+            this.label4.Location = new System.Drawing.Point(580, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(314, 16);
             this.label4.TabIndex = 10;
@@ -174,17 +181,67 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(570, 198);
+            this.label5.Location = new System.Drawing.Point(580, 198);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(314, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "Лимит задержки на 2ом пункте оплаты: 3000 мс";
             // 
+            // labelInfo
+            // 
+            this.labelInfo.AutoSize = true;
+            this.labelInfo.Location = new System.Drawing.Point(8, 7);
+            this.labelInfo.Name = "labelInfo";
+            this.labelInfo.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.labelInfo.Size = new System.Drawing.Size(6, 16);
+            this.labelInfo.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labelInfo);
+            this.panel1.Location = new System.Drawing.Point(580, 321);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(335, 128);
+            this.panel1.TabIndex = 13;
+            // 
+            // labelFinish
+            // 
+            this.labelFinish.AutoSize = true;
+            this.labelFinish.Location = new System.Drawing.Point(580, 480);
+            this.labelFinish.Name = "labelFinish";
+            this.labelFinish.Size = new System.Drawing.Size(49, 16);
+            this.labelFinish.TabIndex = 14;
+            this.labelFinish.Text = "Cancel";
+            // 
+            // travelTimeBar
+            // 
+            this.travelTimeBar.Location = new System.Drawing.Point(580, 220);
+            this.travelTimeBar.Maximum = 15;
+            this.travelTimeBar.Minimum = 1;
+            this.travelTimeBar.Name = "travelTimeBar";
+            this.travelTimeBar.Size = new System.Drawing.Size(335, 56);
+            this.travelTimeBar.TabIndex = 15;
+            this.travelTimeBar.Value = 1;
+            this.travelTimeBar.Scroll += new System.EventHandler(this.travelTimeBar_Scroll);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(580, 259);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(146, 16);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Время в пути: 1000 мс";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 635);
+            this.ClientSize = new System.Drawing.Size(922, 635);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.travelTimeBar);
+            this.Controls.Add(this.labelFinish);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Time3Bar);
@@ -205,6 +262,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Time1Bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Time3Bar)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.travelTimeBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,6 +285,11 @@
         private System.Windows.Forms.TrackBar Time3Bar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelInfo;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelFinish;
+        private System.Windows.Forms.TrackBar travelTimeBar;
+        private System.Windows.Forms.Label label6;
     }
 }
 
