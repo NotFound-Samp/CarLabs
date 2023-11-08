@@ -20,6 +20,7 @@ namespace CarsLab
         private static int timeLimit1 = 3000; // Лимит по времени для первого пункта
         private static int timeLimit2 = 3000; // Лимит по времени для второго пункта
         private static int travelTime = 1000; // Время в пути
+        private static int chancedOutCar = 50;
         private static int compliteCar = 0; // Автомобили, которые проехали первый пункт
         private static int outCar = 0; // Автомобили, которые покинули шоссе
         private static int finishCar = 0; // Автомобили, которые проехали оба пункта
@@ -33,6 +34,12 @@ namespace CarsLab
             progressBar.Maximum = totalCars; // Макс. значение прогресс бара это кол-во машин
             progressBar.Value = 0;
 
+            compliteCar = 0;
+            outCar = 0;
+            finishCar = 0;
+
+            listBox1.Items.Clear();
+
             labelInfo.Text = 
                 $"Шлагбаумы: \n" +
                 $"Первый пункт: {(int)numericUpDownBooths1.Value}\n" +
@@ -44,7 +51,11 @@ namespace CarsLab
             stopwatch.Start();
 
             for (int i = 1; i <= totalCars; i++) // Моделируем движение автомобилей в totalCars количестве
+            {
                 tasks.Add(SimulateCar(i));
+                await Task.Delay(random.Next(1000, 2000));
+            }    
+                
             await Task.WhenAll(tasks); // Жду, когда вся хуйня закончиться
 
             stopwatch.Stop();
@@ -74,7 +85,7 @@ namespace CarsLab
 
             await Task.Delay(travelTime);
 
-            if (random.Next(0, 2) == 0) // С вероятностью 50% или 33%, я хуй знает, автомобиль покидает шоссе
+            if (random.Next(0, 100) <= chancedOutCar) // С вероятностью 50% или 33%, я хуй знает, автомобиль покидает шоссе
             {
                 listBox1.Items.Add($"[{CurrentTime()}] Автомобиль[{carNumber}] покинул шоссе без проезда ко второму пункту.");
                 progressBar.Invoke((MethodInvoker)(() => progressBar.Value++)); // Когда автомобиль съебался, увеличиваю значение прогрессбара
@@ -99,27 +110,15 @@ namespace CarsLab
         }
         private void numericUpDownBarrier1_ValueChanged(object sender, EventArgs e) // Метод, который хукает эвент нажатия inputInt и увеличивает/уменьшает своё значение
         {
-            if ((int)numericUpDownBooths1.Value < 1)
-                numericUpDownBooths1.Value = 1;
-            else if ((int)numericUpDownBooths1.Value > 100)
-                numericUpDownBooths1.Value = 100;
-            firstTollBooth = new SemaphoreSlim((int)numericUpDownBooths1.Value);
+            firstTollBooth = new SemaphoreSlim(MathClamp((int)numericUpDownBooths1.Value, 1, 100));
         }
         private void numericUpDownBarrier2_ValueChanged(object sender, EventArgs e)
         {
-            if ((int)numericUpDownBooths2.Value < 1)
-                numericUpDownBooths2.Value = 1;
-            else if ((int)numericUpDownBooths2.Value > 100)
-                numericUpDownBooths2.Value = 100;
-            secondTollBooth = new SemaphoreSlim((int)numericUpDownBooths2.Value);
+            secondTollBooth = new SemaphoreSlim(MathClamp((int)numericUpDownBooths2.Value, 1, 100)); 
         }
         private void numericUpDownCars_ValueChanged(object sender, EventArgs e)
         {
-            if ((int)numericUpDownCar.Value < 1)
-                numericUpDownCar.Value = 1;
-            else if ((int)numericUpDownCar.Value > 100)
-                numericUpDownCar.Value = 100;
-            totalCars = (int)numericUpDownCar.Value;
+            totalCars = MathClamp((int)numericUpDownCar.Value, 1, 100);
         }
         private void Time1Bar_Scroll(object sender, EventArgs e) // Слайдер, какого-то хуя он тут называется TrackBar, разраб долбаёб. То же самое, что выше, ток тут ползунок
         {
@@ -130,6 +129,11 @@ namespace CarsLab
         {
             timeLimit2 = Time3Bar.Value*1000;
             label5.Text = $"Лимит задержки на 2ом пункте оплаты: {timeLimit2} мс";
+        }
+        private void chancedBar_Scroll(object sender, EventArgs e)
+        {
+            chancedOutCar = chancedBar.Value;
+            chancedValue.Text = $"Шанс съезда автомобиля с шоссе: {chancedOutCar}%";
         }
         private void travelTimeBar_Scroll(object sender, EventArgs e)
         {
@@ -146,12 +150,22 @@ namespace CarsLab
                 temp2 = 0;
             labelFinish.Text = $"Автомобилей в очереди на первый пункт: {temp1},\nАвтомобилей в очеди на второй пункт: {temp2}.";
         }
+        private int MathClamp(int number, int minLimit, int maxLimit)
+        {
+            if (number <= minLimit)
+                number = minLimit;
+            else if (number >= maxLimit)
+                number = maxLimit;
+            return number;
+        }
         private TimeSpan CurrentTime()
         {
             TimeSpan currentTime = DateTime.Now.TimeOfDay;
             TimeSpan currentTimeWithoutMilliseconds = new TimeSpan(currentTime.Hours, currentTime.Minutes, currentTime.Seconds);
             return currentTimeWithoutMilliseconds;
         }
+
+
     }
 }
 // По итогу лаба - хуйня, препод - еблан, а из готового продукта надо удалять все комментарии, но это Pre-released, так что хуй там. Чурка лох кста

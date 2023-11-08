@@ -46,6 +46,8 @@
             this.labelFinish = new System.Windows.Forms.Label();
             this.travelTimeBar = new System.Windows.Forms.TrackBar();
             this.label6 = new System.Windows.Forms.Label();
+            this.chancedBar = new System.Windows.Forms.TrackBar();
+            this.chancedValue = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBooths1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBooths2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCar)).BeginInit();
@@ -53,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Time3Bar)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.travelTimeBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chancedBar)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -66,7 +69,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(580, 282);
+            this.button1.Location = new System.Drawing.Point(580, 344);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(335, 33);
             this.button1.TabIndex = 1;
@@ -142,7 +145,7 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(580, 455);
+            this.progressBar.Location = new System.Drawing.Point(580, 517);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(335, 22);
             this.progressBar.TabIndex = 8;
@@ -199,7 +202,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.labelInfo);
-            this.panel1.Location = new System.Drawing.Point(580, 321);
+            this.panel1.Location = new System.Drawing.Point(580, 383);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(335, 128);
             this.panel1.TabIndex = 13;
@@ -207,7 +210,7 @@
             // labelFinish
             // 
             this.labelFinish.AutoSize = true;
-            this.labelFinish.Location = new System.Drawing.Point(580, 480);
+            this.labelFinish.Location = new System.Drawing.Point(580, 570);
             this.labelFinish.Name = "labelFinish";
             this.labelFinish.Size = new System.Drawing.Size(0, 16);
             this.labelFinish.TabIndex = 14;
@@ -232,11 +235,32 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Время в пути: 1000 мс";
             // 
+            // chancedBar
+            // 
+            this.chancedBar.Location = new System.Drawing.Point(580, 282);
+            this.chancedBar.Maximum = 100;
+            this.chancedBar.Name = "chancedBar";
+            this.chancedBar.Size = new System.Drawing.Size(335, 56);
+            this.chancedBar.TabIndex = 17;
+            this.chancedBar.Value = 50;
+            this.chancedBar.Scroll += new System.EventHandler(this.chancedBar_Scroll);
+            // 
+            // chancedValue
+            // 
+            this.chancedValue.AutoSize = true;
+            this.chancedValue.Location = new System.Drawing.Point(588, 322);
+            this.chancedValue.Name = "chancedValue";
+            this.chancedValue.Size = new System.Drawing.Size(232, 16);
+            this.chancedValue.TabIndex = 18;
+            this.chancedValue.Text = "Шанс съезда автомобиля с шоссе: 50%";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 635);
+            this.Controls.Add(this.chancedValue);
+            this.Controls.Add(this.chancedBar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.travelTimeBar);
             this.Controls.Add(this.labelFinish);
@@ -264,6 +288,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.travelTimeBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chancedBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,6 +314,8 @@
         private System.Windows.Forms.Label labelFinish;
         private System.Windows.Forms.TrackBar travelTimeBar;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TrackBar chancedBar;
+        private System.Windows.Forms.Label chancedValue;
     }
 }
 
