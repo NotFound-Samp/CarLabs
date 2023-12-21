@@ -136,7 +136,7 @@
             // CarScrollBar
             // 
             this.CarScrollBar.Location = new System.Drawing.Point(570, 11);
-            this.CarScrollBar.Maximum = 200;
+            this.CarScrollBar.Maximum = 100;
             this.CarScrollBar.Minimum = 1;
             this.CarScrollBar.Name = "CarScrollBar";
             this.CarScrollBar.Size = new System.Drawing.Size(332, 56);

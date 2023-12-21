@@ -99,7 +99,7 @@ namespace CarsLab
         private void BarrierBar2_Scroll(object sender, EventArgs e)
         {
             secondTollBooth = new SemaphoreSlim(BarrierBar2.Value);
-            label1.Text = $"2й пунк количество шлагбаумов: {BarrierBar2.Value}";
+            label2.Text = $"2й пунк количество шлагбаумов: {BarrierBar2.Value}";
         }
     }
 }  
